@@ -1,0 +1,16 @@
+.metadata
+bin/
+tmp/
+local.properties
+.settings/
+.loadpath
+target/
+
+# Eclipse project files
+.classpath
+.project
+.settings/
+# Others
+
+logs/
+.svn

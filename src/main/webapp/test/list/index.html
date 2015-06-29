@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<title>趣味小测试</title>
+<meta content="width=device-width,initial-scale=1, minimum-scale=1.0, maximum-scale=1, user-scalable=no" name="viewport">
+<style type="text/css">
+body {background:#ededed;color: #333;font: 15px 微软雅黑;,Helvetica;overflow: visible;}
+body, h1, h2, h3, h4, h5, h6, hr, p, pre, dl, dt, dd, ul, ol, li, th, td, form, fieldset, legend, button, input, textarea, figure, figcaption, nav, footer, menu {margin: 0;padding: 0;}
+.content, .footer {background-color: #ededed;overflow: hidden;width: 100%;z-index: 1;}
+.mod-app-intro {overflow: hidden;width: 100%;}
+ul, ol, li {list-style: none outside none;}
+.mod-app-intro li { border-bottom: 1px solid #e4e4e4; padding: 10px;position: relative;}
+.mod-app-intro .figure img {border-radius: 8px;display: block;height: 60px;margin: 0 10px 0 0;width: 60px;}
+.mod-app-intro .figcaption {display: block;}
+.mod-app-intro li .tit {height: 22px;line-height: 22px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+h1, h2, h3, h4, h5, h6 {font-size: 100%;font-weight: normal;}
+.mod-app-intro li p {color: #666;font-size: 10px;height: 18px;line-height: 22px;}
+.mod-app-intro li p span:last-child:after {display: none;}
+.game_list li .btn-g {margin-top: 10px;}
+.btn-g {background-color: #f6ad00;border-radius: 2px;height: 24px;line-height: 22px;}
+.btn {color: #fff !important;display: inline-block;font-size: 12px;min-width: 68px;text-align: center;}
+a {font-weight: normal;text-decoration: none;}
+.mod-app-intro .figure {display: -webkit-box;-webkit-box-align: center;}
+.mod-app-intro .figcaption {-webkit-box-flex: 1;display: block;}
+.logo{overflow: hidden;width:100%;}
+.lis{width:100%;}
+.lis a{float: left;width:33%;}
+
+.notice {color: #0080ff;font-size: 12px}
+
+.header {
+background-color: #fcfcfc;
+position: relative;
+z-index: 2;
+}
+
+.fixed {
+position: fixed;
+top: 0;
+left: 0;
+z-index: 998;
+width: 100%;
+}
+
+.nav {
+  margin-bottom: 0;
+  border-bottom: 1px solid #e4e4e4;
+  background-color: #FFF;
+  background-position: 0 bottom;
+  background-size: 100% 2px;
+}
+.nav ul {
+  width: 100%;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -moz-box;
+  display: flexbox;
+  display: box;
+  margin-bottom: 0;
+}
+.nav ul li {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+  height: 40px;
+  font-size: 17px;
+  text-align: center;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAABkCAIAAADITs03AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABZJREFUeNpifvLkCRMDA8MoHhwYIMAAyJQDdn4/LO8AAAAASUVORK5CYII=);
+  background-position: 0 center;
+  background-size: 1px 100%;
+  background-repeat: no-repeat;
+}
+.nav ul li:first-child {
+  background-image: none;
+}
+.nav ul li a {
+  display: block;
+  color: #333333;
+  height: 100%;
+  line-height: 40px;
+}
+.nav ul li.active a {
+  color: #0080ff;
+  background-color: #eee;
+  margin-left: 1px;
+}
+</style>
+<script type="text/javascript">
+var spid="test-list";
+</script>
+<script src="../jssdk/jssdk.min.js"></script>
+<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="../js/count.js"></script>
+
+
+<script>
+function windowLoad(){
+var x = parseInt(window.screen.width/9)+15;
+$(".content").css("marginTop", x+'px');
+$(".list").click(function(){
+	var target = $(this).attr("data-url");
+	location.href = target;
+});
+
+}
+
+</script>
+</head>
+<body  onload="windowLoad();">
+
+<div class = "header fixed">
+	<div class="nav" style="display:none;">
+		<ul class="unstyled">
+			<li><a href="#" data-href="index/">推荐</a></li>
+			<li><a href="#" data-href="tag/">分类</a></li>
+			<li class="active"><a href="#" data-href="play/">最新</a></li>
+			<li><a href="#" data-href="top/">排行榜</a></li>
+		</ul>
+	</div>
+	<div>
+	    <img src="../image/head.png" width="100%" border="0">
+	</div>
+
+
+  <div align="center">
+    <p class="notice">趣味测试陆续更新中，敬请收藏关注！！</p>
+  </div>
+</div>
+
+	<div class="content" style="margin-bottom:60px;">
+		<div class="app-intro">
+			<ul id="j_game_list" class="mod-app-intro game_list">
+			<li class='list' data-url='../11-06-1/'><div class='figure'><img src='http://182.92.131.201/game/test/11-06-1/icon.jpg'><div class='figcaption'><h3 class='tit'>男神女神大测试</h3><p>【11/6】好评:99%</p><p><span>231002人看过</span></p></div><span class='btn btn-g'>开始测试</span></div></li>
+			<li class='list' data-url='../11-05-2/'><div class='figure'><img src='http://182.92.131.201/game/test/11-05-2/icon.jpg'><div class='figcaption'><h3 class='tit'>你会读心术吗</h3><p>【11/4】好评:99%</p><p><span>2301042人看过</span></p></div><span class='btn btn-g'>开始测试</span></div></li>
+			<li class='list' data-url='../11-05-1/'><div class='figure'><img src='http://182.92.131.201/game/test/11-05-1/icon.jpg'><div class='figcaption'><h3 class='tit'>你心里住了几个恋人？太吓人了</h3><p>【11/2】好评:99%</p><p><span>381002人看过</span></p></div><span class='btn btn-g'>开始测试</span></div></li>
+			<li class='list' data-url='../11-02-1/'><div class='figure'><img src='http://182.92.131.201/game/test/11-02-1/icon.jpg'><div class='figcaption'><h3 class='tit'>哈佛情商测试你自测了吗？</h3><p>【11/2】好评:99%</p><p><span>421002人看过</span></p></div><span class='btn btn-g'>开始测试</span></div></li>									
+			<li class='list' data-url='../11-01-1/'><div class='figure'><img src='http://182.92.131.201/game/test/11-01-1/icon.jpg'><div class='figcaption'><h3 class='tit'>什么穿衣风格适合你？</h3><p>【11/2】好评:99%</p><p><span>212342人看过</span></p></div><span class='btn btn-g'>开始测试</span></div></li>									
+			<li class='list' data-url='../10-29-1/'><div class='figure'><img src='http://182.92.131.201/game/test/10-29-1/icon.jpg'><div class='figcaption'><h3 class='tit'>小明很贱，但我很喜欢!</h3><p>好评:99%</p><p><span>【11/2】1242532人看过</span></p></div><span class='btn btn-g'>开始阅读</span></div></li>
+			
+			<li class='list' data-url='../10-26-3/'><div class='figure'><img src='http://182.92.131.201/game/test/10-26-3/icon.jpg'><div class='figcaption'><h3 class='tit'>一份关于90后残酷的调查!</h3><p>好评:99%</p><p><span>【最新】1254人玩过</span></p></div><span class='btn btn-g'>开始测试</span></div></li>
+			<li class='list' data-url='../10-26-2/'><div class='figure'><img src='http://182.92.131.201/game/test/10-26-2/icon.jpg'><div class='figcaption'><h3 class='tit'>今年光棍节脱单指数比拼</h3><p>好评:99%</p><p><span>【最新】322343人玩过</span></p></div><span class='btn btn-g'>开始测试</span></div></li> 
+			<li class='list' data-url='../10-26-1/'><div class='figure'><img src='http://182.92.131.201/game/test/10-26-1/icon.jpg'><div class='figcaption'><h3 class='tit'>基因真能决定开啥车吗？</h3><p>好评:99%</p><p><span>【最新】324245人玩过</span></p></div><span class='btn btn-g'>开始测试</span></div></li>
+			
+			<li class='list' data-url='../10-25-4/'><div class='figure'><img src='http://182.92.131.201/game/test/10-25-4/icon.jpg'><div class='figcaption'><h3 class='tit'>测测你的发胖指数</h3><p>好评:99%</p><p><span>【推荐】232341人玩过</span></p></div><span class='btn btn-g'>开始测试</span></div></li>
+			<li class='list' data-url='../10-25-3/'><div class='figure'><img src='http://182.92.131.201/game/test/10-25-3/icon.jpg'><div class='figcaption'><h3 class='tit'>比比我们未来的“钱途”吧？</h3><p>【最新】好评:99%</p><p><span>124245人玩过</span></p></div><span class='btn btn-g'>开始测试</span></div></li>
+			<li class='list' data-url='../10-25-2/'><div class='figure'><img src='http://182.92.131.201/game/test/10-25-2/icon.jpg'><div class='figcaption'><h3 class='tit'>你知道你的潜在性格是怎样的？</h3><p>【最新】好评:99%</p><p><span>784932人玩过</span></p></div><span class='btn btn-g'>开始测试</span></div></li>	
+			<li class='list' data-url='../10-25-1/'><div class='figure'><img src='http://182.92.131.201/game/test/10-25-1/icon.jpg'><div class='figcaption'><h3 class='tit'>你被一见钟情的可能性很高？</h3><p>【热门】好评:99%</p><p><span>1325323人玩过</span></p></div><span class='btn btn-g'>开始测试</span></div></li>			
+			
+			<li class='list' data-url='../10-27-5/'><div class='figure'><img src='http://182.92.131.201/game/test/10-27-5/icon.jpg'><div class='figcaption'><h3 class='tit'>小学数学题目，敢考吗？</h3><p>好评:99%</p><p><span>1325323人玩过</span></p></div><span class='btn btn-g'>开始测试</span></div></li>			
+			<li class='list' data-url='../10-27-3/'><div class='figure'><img src='http://182.92.131.201/game/test/10-27-3/icon.jpg'><div class='figcaption'><h3 class='tit'>2015幸福指数大测验！</h3><p>好评:99%</p><p><span>1525463人玩过</span></p></div><span class='btn btn-g'>开始测试</span></div></li>			
+			<li class='list' data-url='../10-27-4/'><div class='figure'><img src='http://182.92.131.201/game/test/10-27-4/icon.jpg'><div class='figcaption'><h3 class='tit'>手机对你有多重要？</h3><p>好评:99%</p><p><span>1543536人玩过</span></p></div><span class='btn btn-g'>开始测试</span></div></li>
+			<li class='list' data-url='../10-27-2/'><div class='figure'><img src='http://182.92.131.201/game/test/10-27-2/icon.jpg'><div class='figcaption'><h3 class='tit'>你把金钱看得多重要？</h3><p>好评 97%</p><p><span>2314080人玩过</span></p></div><span class='btn btn-g'>开始测试</span></div></li>
+			<li class='list' data-url='../10-27-1/'><div class='figure'><img src='http://182.92.131.201/game/test/10-27-1/icon.jpg'><div class='figcaption'><h3 class='tit'>你是学霸还是学渣？</h3><p>好评:88%</p><p><span>1376485人玩过</span></p></div><span class='btn btn-g'>开始测试</span></div></li>
+			
+			<li class='list' data-url='../10-24-1/'><div class='figure'><img src='http://182.92.131.201/game/test/10-24-1/icon.jpg'><div class='figcaption'><h3 class='tit'>著名美国兰德心理测试</h3><p>好评:96%</p><p><span>5434451人玩过</span></p></div><span class='btn btn-g'>开始测试</span></div></li>
+			<li class='list' data-url='../10-24-2/'><div class='figure'><img src='http://182.92.131.201/game/test/10-24-2/icon.jpg'><div class='figcaption'><h3 class='tit'>测测你是水浒传中的哪个人物？</h3><p>好评:92%</p><p><span>1235323人玩过</span></p></div><span class='btn btn-g'>开始测试</span></div></li>
+			<li class='list' data-url='../10-24-3/'><div class='figure'><img src='http://182.92.131.201/game/test/10-24-3/icon.jpg'><div class='figcaption'><h3 class='tit'>测测你是西游记中的谁？</h3><p>好评:93%</p><p><span>367865人玩过</span></p></div><span class='btn btn-g'>开始测试</span></div></li>
+			<li class='list' data-url='../10-24-4/'><div class='figure'><img src='http://182.92.131.201/game/test/10-24-4/icon.jpg'><div class='figcaption'><h3 class='tit'>测测你是三国杀中的谁？</h3><p>好评:82%</p><p><span>246176人玩过</span></p></div><span class='btn btn-g'>开始测试</span></div></li>
+			</ul>
+		</div>
+	</div>
+
+
+
+	
+<script type="text/javascript">
+	var dataForWeixin = {
+		  appId: "",
+		  TLImg: "http://182.92.131.201/game/test/image/logo.jpg",
+		  url: window.location.href,
+		  title: "趣味小测试",
+		  desc: "Long64提供最热门的趣味小测试，如果觉得好请分享好友哦。"
+	};
+
+	var onBridgeReady = function(){
+		WeixinJSBridge.call('showOptionMenu');
+		WeixinJSBridge.on('menu:share:appmessage', function(argv){
+			WeixinJSBridge.invoke('sendAppMessage', {
+				"appid": dataForWeixin.appId,
+				"img_url": dataForWeixin.TLImg,
+				"img_width": "120",
+				"img_height": "120",
+				"link": dataForWeixin.url,
+				"title": dataForWeixin.title,
+				"desc": dataForWeixin.desc 
+			});
+	 setTimeout(function () {location.href = "#";}, 1500); 
+		});
+		WeixinJSBridge.on('menu:share:timeline', function(argv){            
+			WeixinJSBridge.invoke('shareTimeline', {
+				"appid": dataForWeixin.appId,
+				"img_url":dataForWeixin.TLImg,
+				"img_width": "120",
+				"img_height": "120",
+				"link": dataForWeixin.url,
+				"title": dataForWeixin.title,
+				"desc": dataForWeixin.desc
+			});
+	setTimeout(function () {location.href = "#";}, 1500);  
+		});
+	};
+	if(document.addEventListener){
+		document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+	}else if(document.attachEvent){
+		document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+		document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+	}   
+</script>
+
+<!--20141116 王林隐藏 ad  <img id="hideADbtn" src="../image/closebtn.png" style="position:fixed; z-index:9999; bottom:50px; left:0;
+" ontouchstart="closeADFunc();">
+<div id="spn" style="position:fixed; bottom:0;left:0;height:50px;width:320px;"></div> -->
+    
+<!-- 20141116 王林注释  百度统计js代码
+<div style="display:none;">
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fe790b64cf9b706fab95d6dc6fa5838fe' type='text/javascript'%3E%3C/script%3E"));
+</script></div> -->
+</body>
+</html>

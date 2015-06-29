@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<title>2048</title>
+
+<link href="style/main.css" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" href="../image/favicon.ico">
+<link rel="apple-touch-icon" href="../image/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport"
+	content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+<meta name="format-detection" content="telephone=no" />
+
+<meta name="apple-itunes-app" content="app-id=868076805">
+
+<meta property="og:title" content="2048 game" />
+<meta property="og:site_name" content="2048 game" />
+<meta property="og:description"
+	content="Join the numbers and get to the 2048 tile! Careful: this game is extremely addictive!" />
+<!-- <meta property="og:image"
+	content="http://gabrielecirulli.github.io/2048/meta/og_image.png" /> -->
+</head>
+<script type="text/javascript">
+var spid="2048";
+</script>	
+<script type="text/javascript" src="./jssdk/jssdk.min.js"></script>
+<script type="text/javascript">
+var test = new adwojs({
+	eid:'spn', //节点id
+	aid: '8c08600d53bc44f58c343424f4ba2e2b', //android安卓PID
+	pid: '39d9a5b89ddb4ea391afe94de20a1301', //iOS PID
+	bt: false,
+	af:true, //是否自动适合ipad平板广告，默认值为true。
+	width: 320, //广告图片宽度(除320外，还有720宽度，用于ipad中显示)
+	height:50  //广告图片高度(除50外，还有110高度，用于ipad中显示)
+	});
+	test.send();
+</script>
+<body>
+	<div class="container">
+		<div class="heading">
+			<h1 class="title">2048</h1>
+			<div class="scores-container">
+				<div class="score-container">0</div>
+				<div class="best-container">0</div>
+			</div>
+		</div>
+
+		<div class="above-game">
+			
+			<a class="back-button">回退</a>
+			<a class="restart-button">重新开始</a>
+		</div>
+
+		<div class="app-notice" style="display:none">
+			<span class="notice-close-button">x</span>
+			<p><strong class="important">最新功能:</strong> 添加回退功能与保存功能，让你随便玩，快乐玩</p>
+		</div>
+
+		<div class="game-container">
+			<div class="game-message">
+				<p></p>
+				<div class="lower">
+					<a class="keep-playing-button">Keep going</a> <a
+						class="retry-button">Try again</a>
+						
+					<div class="score-sharing"></div>
+					<div class="mailing-list">
+						<!-- MailChimp Signup Form -->
+						
+						
+					</div>
+				</div>
+			</div>
+
+			<div class="grid-container">
+				<div class="grid-row">
+					<div class="grid-cell"></div>
+					<div class="grid-cell"></div>
+					<div class="grid-cell"></div>
+					<div class="grid-cell"></div>
+				</div>
+				<div class="grid-row">
+					<div class="grid-cell"></div>
+					<div class="grid-cell"></div>
+					<div class="grid-cell"></div>
+					<div class="grid-cell"></div>
+				</div>
+				<div class="grid-row">
+					<div class="grid-cell"></div>
+					<div class="grid-cell"></div>
+					<div class="grid-cell"></div>
+					<div class="grid-cell"></div>
+				</div>
+				<div class="grid-row">
+					<div class="grid-cell"></div>
+					<div class="grid-cell"></div>
+					<div class="grid-cell"></div>
+					<div class="grid-cell"></div>
+				</div>
+			</div>
+
+			<div class="tile-container"></div>
+		</div>
+
+		<p class="game-explanation">
+			<strong class="important">How to play:</strong> Use your <strong>arrow
+				keys</strong> to move the tiles. When two tiles with the same number touch,
+			they <strong>merge into one!</strong>
+		</p>
+		<hr>
+		
+
+		</div>
+	<!-- </div> -->
+	<br />
+	
+	<img id="hideADbtn" src="../image/closebtn.png" style="position:fixed; z-index:9999; bottom:50px; left:0;" ontouchstart="closeADFunc();">
+	<div id="spn" style="position:fixed; bottom:0; left:0;z-index:9999;height:50px;width:320px;" onclick="clickad();"></div> 
+	
+	
+	<script src="js/bind_polyfill.js"></script>
+	<script src="js/classlist_polyfill.js"></script>
+	<script src="js/animframe_polyfill.js"></script>
+	<script src="js/keyboard_input_manager.js"></script>
+	<script src="js/html_actuator.js"></script>
+	<script src="js/grid.js"></script>
+	<script src="js/tile.js"></script>
+	<script src="js/local_storage_manager.js"></script>
+	<script src="js/game_manager.js"></script>
+	<script src="js/application.js"></script>
+	<!-- <script src="jquery-1.8.3.min.js"></script> -->
+	<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
+	<script src="temp.js"></script>
+	<script src="js/share.js"></script>
+	<script type="text/javascript">
+///////////////first setting//////////////////////////////
+var spid="23";
+	var basedns = window.location.hostname+"/game";
+	var dataForWeixin = {
+	appId: "",
+	server: "http://"+basedns,
+	imgUrl: "http://" +basedns +"/game/image/2048.jpg",
+	url: "http://"+basedns+"/game/2048/index.html",
+	title: "获得 2048，你就赢了！(每次重新打开继续玩哦)",
+	desc: "快来试试吧，不一样的2048哦"
+	};
+	
+	var _hmt = _hmt || [];
+	var _czc = _czc || [];
+
+	function clickad(ev){
+		_hmt.push(['_trackEvent', 'adwo', 'adclick', 'adbanner'+spid]);
+		_czc.push(['_trackEvent', 'adwo', 'adclick', 'adbanner'+spid]);
+		return false;
+	}
+	 //关闭按钮
+	function closeADFunc() {
+	document.getElementById('hideADbtn').style.display='none';
+	document.getElementById('spn').style.display='none';
+	}
+	</script>
+	<script src="js/countgame.js"></script>
+</body>
+</html>

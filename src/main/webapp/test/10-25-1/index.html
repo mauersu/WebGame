@@ -1,0 +1,343 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="../image/favicon.ico">
+<meta name="viewport" content="width=device-width,  minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>测试你被一见钟情的可能性？</title>
+<script type="text/javascript">
+var spid="10-25-1";
+</script>
+<script type="text/javascript" src="../jssdk/jssdk.min.js"></script>
+<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="../js/avalon.mobile.min.js"></script>
+<script type="text/javascript" src="../js/count.js"></script>
+  <style>
+        * {
+            font-family: '微软雅黑';
+        }
+
+        html, body {
+            margin: 0;
+            color: #000;
+            background: #95d15f;
+            background-size: 100%;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+        }
+
+
+        #loading {
+            text-align: center;
+            font-size: 20px;
+            line-height: 400px;
+            display: none;
+        }
+
+        .loading #loading {
+            display: block;
+        }
+
+        .loading .head,
+        .loading .main {
+            display: none;
+        }
+
+        .head img {
+            width: 100%;
+        }
+
+        .main {
+            padding: 10px;
+            padding-top:9%;
+            margin-top: -10px;
+            text-align: center;
+        }
+
+        .t-t {
+            font-size: 22px;
+            line-height: 2em;
+            text-align: left;
+        }
+
+        .t-s {
+            padding: 5px;
+            background-color: #f9baba;
+            max-width: 100%;
+            margin: 10px auto;
+            text-align: center;
+            position: relative;
+            -webkit-transition: background-color 0.3s ease;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .t-s img {
+            max-width: 100%;
+        }
+
+        .t-s span {
+            font-size: 1.1em;
+            line-height: 1.5em;
+            font-weight: bold;
+            color: #761511;
+			padding:5px 20px;
+        }
+
+        .t-s.active {
+            background-color: #e98483;
+        }
+
+            .t-s.active span {
+                color: #fff;
+            }
+
+        .t-s:after {
+            position: absolute;
+            right:2px;
+            top: 2px;
+            padding: 5px;
+            background: rgba(255,255,255,1);
+            content: "√";
+            display: none;
+            opacity: 0;
+            -webkit-transition: opacity 0.3s ease;
+			font-size: 1.1em;
+        }
+
+        .t-s.error:after {
+            background: rgba(255,0,0,1);
+            content: "×";
+            color: white;
+        }
+
+        .t-s.active:after {
+            display: block;
+            opacity: 1;
+        }
+
+        .t-c {
+            line-height: 1.2em;
+            padding:10px;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            text-align: left;
+            color: #761511;
+            overflow: hidden;
+        }
+
+        .t-s.h {
+            max-width: 40%;
+            display: inline-block;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        .t-r {
+      
+            font-weight: bold;
+            overflow: hidden;
+        }
+
+            .t-r span {
+                display: inline-block;
+                vertical-align: middle;
+                font-size: 50px;
+                color: #27AE60;
+                /*color: rgba(0,0,0,0);*/
+                text-shadow: 3px 0 4px #16A085;
+            }
+
+        .t-img {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+            .t-img img {
+                max-width: 60%;
+            }
+
+        .t-btn,
+        .t-btn:link,
+        .t-btn:visited {
+            color: #e1edea;
+            background-color: #74b651;
+            padding-top: 12px;
+            padding-bottom: 13px;
+            padding-left: 15px;
+            padding-right: 15px;
+            display: inline-block;
+            line-height: 1em;
+            min-width: 60%;
+            margin: 10px auto;
+            border-radius: 7px;
+            text-decoration: none;
+        }
+		.t-btn{
+			font-size:1.1em;
+		}
+        .share {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.6);
+            display: none;
+            z-index: 1000;
+        }
+
+            .share img {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 70%;
+                max-width: 320px;
+            }
+
+        .livetip {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 200;
+        }
+
+        .lt-w {
+            position: fixed;
+            top: 100px;
+            left: 10px;
+            right: 10px;
+            z-index: 300;
+        }
+
+            .lt-w .lt-c {
+                background-color: white;
+                padding-top: 10px;
+                padding-bottom: 20px;
+            }
+
+        .list {
+            list-style: initial;
+            text-align: left;
+        }
+
+            .list li {
+                margin-top: 0.5em;
+                margin-bottom: 0.5em;
+            }
+
+        a,
+        a:link,
+        a:visited {
+            color: #ffffff;
+        }
+
+        .dialog {
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .dialog-bg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.7);
+        }
+
+        .dialog-con {
+            position: absolute;
+            width: 280px;
+            top: 100px;
+            background-color: white;
+            left: 50%;
+            margin-left: -140px;
+            padding-bottom: 10px;
+        }
+		.mane{
+			width: 84%;
+			margin-bottom:10px;
+			background:url("./image/mane.png") no-repeat;
+			height:60px;
+			color:#ffffff;
+			font-size:21px;
+			line-height:36px;
+			background-size:100%;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			word-break: keep-all;
+			padding:0 25px;
+			overflow: hidden;
+		}
+    </style>
+</head>
+<body class="loading" onload="showQ();">
+	<div id="zhao" style="background:#1A1A1A;height: 100%;position: fixed;top: 0;width: 100%;z-index: 1;text-align: center;color: #FFFFFF;font-size: 30px;padding-top: 100px;font-weight: bold;display:block;">
+	<img style="position: relative;top: 40px;width:80px" src="../image/load.gif" />
+		加载中......	</div>
+    <div id="loading">加载中</div>
+    <div class="head"></div>
+    <div class="main" id="main" ms-controller="test">
+        <!-- 测试题 -->
+        <div ms-if="item.type=='hello'" >
+			<div class="mane">测试你被一见钟情的可能性？</div>
+            <div class="t-c" ms-if="item.text">
+                {{item.text}}
+            </div>
+            <div class="t-c" ms-if="item.text1">
+                {{item.text1}}
+            </div>
+            <div class="t-s h" ms-repeat-elem="item.select" ms-class-active="elem.active"  ms-on-click="elem.tap(elem, item.select)">
+                <img ms-attr-src="{{elem.img}}">
+                <span>{{elem.text}}</span>
+            </div>
+            <div class="t-btn"><a href="javascript:;" onclick="tarHref(1)">关注我们</a></div>
+			<div class="t-btn"><a href="javascript:;" onclick="tarHref(2)">我想玩其他好玩的</a></div>
+			<div class="t-btn"><a href="javascript:;" onclick="tarHref(3)">精彩尽在Long64</a></div>
+        </div>
+        <div ms-if="item.type=='select'">
+			<div class="mane">测试你被一见钟情的可能性？</div>
+            <div class="t-c">
+                <div ms-if="item.img" style="margin-bottom:0.5em;">
+                    <img ms-attr-src="{{item.img}}">
+                </div>
+                {{item.id}}. {{item.text}}
+            </div>
+            <div class="t-s" ms-repeat-elem="item.select" ms-class-active="elem.active" ms-on-click="elem.tap(elem, item.select)">
+                <img ms-if="!!elem.img" ms-attr-src="{{elem.img}}">
+                <span>{{elem.text}}</span>
+            </div>
+        </div>
+        <div id="sans" style="display:none;">
+            <div class="t-r" id="fis">
+                <span></span>
+            </div>
+            <div class="t-c" id="sec">
+               
+            </div>
+            <div class="t-btn"><a href="javascript:;" onclick="tarHref(1)">关注我们</a></div>
+			<div class="t-btn"><a href="javascript:;" onclick="tarHref(2)">我还想玩其他好玩的</a></div>
+			<div class="t-btn"><a href="javascript:;" onclick="tarHref(3)">精彩尽在Long64</a></div>
+        </div>
+    </div>
+
+
+<div style="font-size: 30px;text-align:center;padding-top: 20%;color: red;background: rgba(0,0,0,0.7);position: fixed;width: 100%;height: 100%;top: 0px;left: 0px;z-index: 10000;display:none;" 
+id="tips" ontouchstart="document.getElementById('tips').style.display='none';">测试完成啦！分享到朋友圈后结果自动弹出，并有详细分析哦！</br>:-D 不要不好意思啦~~</div>
+
+<img id="hideADbtn" src="../image/closebtn.png" style="position:fixed; z-index:9999; bottom:50px; left:0;" ontouchstart="closeADFunc();">
+<div id="spn" style="position:fixed; bottom:0; left:0;z-index:9999;height:50px;width:320px;" onclick="clickad();"></div>
+<script type="text/javascript" src="./10-25-1.js"></script>
+<script type="text/javascript" src="../js/share.js"></script>
+
+<!-- <div style="display:none;"><script type="text/javascript">tongji();</script></div> -->
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Test : ">
+ <title>趣味小测试</title>
+ 
+  	   <script src="./jssdk/jssdk.min.js"></script>
+<!--    20141116 王林隐藏 ad  	<script type="text/javascript">
+	var test = new adwojs({
+		 eid:'spn', //节点id
+		 aid: '019d70f4408d4fa18c5ae574644db483', //android安卓PID
+		 pid: '029aad4ebdb34f3fa38c29b79408788d', //iOS PID
+		 bt: false,
+		 af:true, //是否自动适合ipad平板广告，默认值为true。
+		 width: 320, //广告图片宽度(除320外，还有720宽度，用于ipad中显示)
+         height:50  //广告图片高度(除50外，还有110高度，用于ipad中显示)
+		 
+	});
+	test.send();
+		//关闭按钮
+	function closeADFunc() {
+	document.getElementById('hideADbtn').style.display='none';
+	document.getElementById('spn').style.display='none';
+	}
+	</script>	 -->
+	
+  </head>
+
+  <body>
+<p>趣味测试，值得关注.</p>
+<a  href="list/index.html">大量趣味测试，请点击进入！</a>
+
+
+	<script type="text/javascript">
+		$(".list").click(function(){
+			var target = $(this).attr("data-url");
+			location.href = target;
+		});
+	</script>
+	<script type="text/javascript">
+	var dataForWeixin = {
+		  appId: "",
+		  TLImg: "http://182.92.131.201/game/test/image/logo.jpg",
+		  url: window.location.hostnanme+"/test/list/",
+		  title: "趣味小测试",
+		  desc: "Long64提供最热门的趣味小测试，如果觉得好请分享好友哦。"
+	};
+
+	var onBridgeReady = function(){
+		WeixinJSBridge.call('showOptionMenu');
+		WeixinJSBridge.on('menu:share:appmessage', function(argv){
+			WeixinJSBridge.invoke('sendAppMessage', {
+				"appid": dataForWeixin.appId,
+				"img_url": dataForWeixin.TLImg,
+				"img_width": "120",
+				"img_height": "120",
+				"link": dataForWeixin.url,
+				"title": dataForWeixin.title,
+				"desc": dataForWeixin.desc 
+			});
+	 setTimeout(function () {location.href = window.location.hostnanme+"/test/list/";}, 1500); 
+		});
+		WeixinJSBridge.on('menu:share:timeline', function(argv){            
+			WeixinJSBridge.invoke('shareTimeline', {
+				"appid": dataForWeixin.appId,
+				"img_url":dataForWeixin.TLImg,
+				"img_width": "120",
+				"img_height": "120",
+				"link": dataForWeixin.url,
+				"title": dataForWeixin.title,
+				"desc": dataForWeixin.desc
+			});
+	setTimeout(function () {location.href =window.location.hostnanme +"/test/list/";}, 1500);  
+		});
+	};
+	if(document.addEventListener){
+		document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+	}else if(document.attachEvent){
+		document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+		document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+	}   
+</script>
+<!--  20141116 王林隐藏 ad    <img id="hideADbtn" src="../image/closebtn.png" style="position:fixed; z-index:9999; bottom:50px; left:0;
+	" ontouchstart="closeADFunc();">
+    <div id="spn" style="position:fixed; bottom:0;left:0;height:50px;width:320px;"></div> -->
+    
+<!-- 20141116 王林隐藏 百度统计	<div style="display:none;">
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " ../../index.htm");
+document.write(unescape("%3Cscript src='"%20+%20_bdhmProtocol%20+/index.htm"hm.baidu.com/h.js%3Fe790b64cf9b706fab95d6dc6fa5838fe' type='text/javascript'%3E%3C/script%3E"));
+</script></div> -->
+
+
+  </body>
+</html>

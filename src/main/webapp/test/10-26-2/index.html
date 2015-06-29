@@ -1,0 +1,341 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="icon" href="../image/favicon.ico">
+<meta name="viewport" content="target-densitydpi=320,width=640,user-scalable=no">
+<title>测测你今年光棍节脱光指数</title>
+<script type="text/javascript">
+var spid="10-26-2";
+var basedns = window.location.hostname+"/game";
+var mebtnopenurl = "http://"+basedns+"/test/"+spid+"/";
+var dataForWeixin = {
+appId: "",
+server: basedns,
+imgUrl: "http://"+basedns+"/test/"+spid+"/icon.jpg",
+url: "http://"+basedns+"/test/"+spid+"/index.html",
+title: "测测你今年光棍节脱光指数",
+desc: "很准的呦,都来试试吧"
+};
+
+</script>
+<script src="../jssdk/jssdk.min.js"></script>
+<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jQueryRotateCompressed.js"></script>
+<script type="text/javascript" src="../js/count.js"></script>
+<script src="../js/share.js"></script>
+
+<script type="text/javascript">
+      var info = "";
+	  var infos = "";
+      var reason = "";
+      var name = "";
+	  openCount(spid);
+      $(function(){
+
+          var r_h = $("#round").width();
+          $("#round").css("height", r_h + "px");
+
+          var a_p = r_h*3/8;
+
+          $("#arrow").css("width", a_p + "px");
+
+          var p_t = (r_h/2) - (a_p/2);
+          $("#arrow").css("padding-top", p_t + "px");
+
+
+          $("#begin").click(function(){
+			var name = $("#name").val();
+			if(name == "" || name.length == 0){
+			  alert("请输入你的姓名!");
+			  return false;
+			}
+			clickCount("10-26-2");
+			var num = 0;
+			for(var a=0;a< name.length;a++){
+				num = num + name.charCodeAt(a);
+			}
+			var res = num%12;
+			if(res+1>12){
+				res = 12;
+			}else{
+				res = Number(res)+1;
+			}
+			var d = res;
+			var info = "";
+			var infos = "";
+			if(res == 1){
+				info = "11% 恭喜你获得光棍荣誉证书";
+			}else if(res == 2){
+				info = "53% 丘比特射箭时手抖了下";
+			}else if(res == 3){
+				info = "97% 今年光棍节注定与您无缘！";
+			}else if(res == 4){
+				info = "34% 去街上见一对拆一对吧~";
+			}else if(res == 5){
+				info = "99% 追你的人排队到门口，挑都来不及";
+			}else if(res == 6){
+				info = "41% 请君待明年~~";
+			}else if(res == 7){
+				info = "76% 脱光无限好，只是易感冒";
+			}else if(res == 8){
+				info = "64% 暮然回首,大叔大娘有无数~";
+			}else if(res == 9){
+				info = "85% 恭喜！您的春天来了~~";
+			}else if(res == 10){
+				info = "100% 以你的长相，只要你想脱单 分分钟的事情";
+			}else if(res == 11){
+				info = "0% 继续光棍";
+			}else{
+				info = "88% 双11 终于不用逛淘宝 可以约会了";
+			}
+			info = "经鉴定'"+name+"'今年光棍节脱光指数为："+info+"。";
+			infos = info;
+			info = info+ "好牛<img src='../image/1.gif' _moz_resizing='true'>";
+			d = d * 30 + 15;
+			$('#arrow-img').stopRotate();
+			$("#arrow-img").rotate({
+			  angle:0,
+			  duration: 10000,
+			   animateTo: d+1440+720,
+			  callback:function(){
+				 var w = $(document).width();    
+				  var l;
+				  var r_w = $("#result").width();
+
+				  l = w/2 - (r_w/2);
+				  $("#result").css("left", l + "px");
+
+				  $("#info").html(info);
+				  $("#infos").text(infos);
+				  document.title = infos;
+			      dataForWeixin.title = infos,
+				  WeixinJSBridge.call('showOptionMenu');
+				  $("#result").show();            
+			  }
+			});
+			location.href = "#arrow";
+		});
+
+          $("body").on("click", "#close", function(){     
+              $("#result").hide();
+			  $("#ad").show();  
+              $("#content").show();       
+          });
+
+          $("#share").click(function(){
+              var info = $("#info").html();         
+          });
+
+      });
+      </script>
+<style type="text/css">
+	body{
+		padding: 0;
+		margin: 0;
+		background: #fff;
+	}
+	#content{
+          padding: 0 0 10px 0;
+          margin: 0 auto;
+          width: 100%;
+          height: 90%;
+		  border-bottom: 1px solid #DCDCDC;
+          background:#fff;
+      }
+	#bg{
+		margin: 0 auto;
+		width: 100%;
+		height: auto;
+		background:#fff;
+	}
+	#marry-who{
+		margin: 0 auto;
+		padding-top: 10px;
+		width: 100%;
+		height: 172px;
+		background-image: url(./image/1.jpg);
+		background-repeat: no-repeat;
+		background-position: bottom;
+		-moz-background-size:100% 100%;
+		background-size:100% 100%;
+	}
+	  #marry-form{
+          padding: 17px 20px 0;
+		float:left;
+		display:inline;
+      }
+      #ad{
+          margin:0 auto;
+          text-align:center;
+		  width:650px;
+      }
+	  #bai{
+		margin:0 auto;
+		text-align:center;
+		width:650px;
+	 }
+      #marry-form .form-one{
+		  font-size:30px;
+		  margin: 60px 35px 0 0;
+		  float:left;
+      }
+      #begin{
+		  margin: 53px 35px 0 0;
+		  width: 168px;
+		  height: 60px;
+		  cursor: pointer;
+		  float:left;
+	   }
+
+	   #begin img{
+		  width: 168px;
+		  height:60px;
+	   }
+	#round{
+		width: 90%;
+		height: auto;
+		margin: 0 auto;
+		background-image: url(./image/2.jpg);
+		-moz-background-size:100% 100%;
+		background-size:100% 100%;
+		filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./image/2.jpg', sizingMethod='scale');
+	}
+	#arrow{
+		margin: 0 auto;
+		padding-top: 10em;
+		text-align: center;
+	}
+	#arrow-img{
+		width: 100%;
+		height: auto;
+	}
+	#result{
+		  font-size:30px;
+          width: 90%;
+          height: 158px;
+          margin: 0 auto;
+          position: fixed;
+          top:40%;
+          background-image: url(./image/result.png);
+          background-repeat: no-repeat;
+          filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+          -moz-background-size:100% 100%;
+          background-size:100% 100%;
+          display: none;
+          z-index: 999;
+      }
+	#info{
+		padding-top: 40px;
+		font-weight:800;
+		padding-bottom: 8px;
+		padding-left: 30px;
+		font-size:24px;
+		width:95%;
+		z-index: 999;
+	}
+	#tools{
+		padding-left: 30px;
+	}
+	#share{
+		font-size:18px;
+		margin-top:2px;
+		color:red;
+	}
+	#close{
+		position: absolute;
+		width: 46px;
+		height: 46px;
+		right: 0;
+		margin-top: -5px;
+		margin-right: -5px;
+	}
+
+	.guanzhu a{
+		font-size:18px;
+	}
+
+
+
+	#mask {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: none;
+		background-color: #333;
+		-moz-opacity: 0.9;
+		opacity: 0.9;
+	}
+	#tip {
+		display: none;
+		position: absolute;
+		width: 100%;
+		top: 10px;
+		left: 15px;
+	}
+	#tip img{
+		width:90%;
+		margin:0 auto;
+		text-align:center;
+	}
+	.game{padding:0 10px;}.game a{font-size: 18px;text-align: left;background: url("./image/yjt.png") no-repeat scroll right center rgba(0, 0, 0, 0);border-bottom: 2px dashed #dad9d9;font-size: 30px;height: 70px;line-height: 70px;overflow: hidden;padding-right: 9px;text-overflow: ellipsis;white-space: nowrap;display: block;color:#333333;}.rec_holder{background: none repeat scroll 0 0 #fff;border: 2px solid #ccc;border-radius: 5px;margin: 15px 15px 30px;padding-bottom:10px;}.game_header{background: none repeat scroll 0 0 #f2f1f1;border-bottom: 2px solid #ccc;text-align: center;padding:20px;margin-bottom:10px;font-size: 32px;}body { margin-right: -15px; margin-bottom: -15px; }
+
+</style>
+</head>
+<body>
+<div id="ceshuResult"></div>
+<div id="ad" >
+	</div>
+<div id="result">
+  <div id="close">
+    <img src="./image/close.png" alt=""/>
+  </div>
+  <div id="info">
+  </div>
+  <div id="tools">
+    <span id="share">
+      觉得好玩就分享到朋友圈让朋友一起玩吧！  
+    </span>
+  </div>
+</div>
+<div id="content">
+  <div id="bg">
+      <div id="round">
+        <div id="arrow">
+           <img src="./image/arrow2.png" id="arrow-img" alt=""/>
+       </div>
+    </div>
+
+    <div id="marry-who">   
+      <div id="marry-form">
+         <div class="form-one">
+          <label for="name">填写你的姓名</label>
+          <input type="text" name="name" id="name" style="width:120px;font-size:30px;"/>
+        </div>
+        <div id="begin">
+         <img src="./image/start.png" alt=""/>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="infos" style="display:none"></div>
+
+
+<img id="hideADbtn" src="../image/closebtn.png" style="position:fixed; z-index:9999; bottom:50px; right:0;" ontouchstart="closeADFunc();">
+<div id="spn" style="position:fixed; bottom:0;right:0;z-index:9999;height:50px;width:320px;"></div>
+
+
+<div class="rec_holder" style="clear:both;line-height:24px;white-space: nowrap;margin-top:10px;">
+	<div class="game_header" > ↓ 更多好玩测试推荐 ↓ </div>
+	<div class='game'><a style='color:#333333; text-decoration:none; ' href='../10-26-1/'>基因测试你适合开什么车</a></div>
+	<div class='game'><a style='color:#333333; text-decoration:none; ' href='../10-25-2/'>你拥有着什么样的潜在性格？</a></div>
+	<div class='game'><a style='color:#333333; text-decoration:none; ' href='../10-25-1/'>测测你被一见钟情的可能性？</a></div>
+	<div class='game'><a style='color:#333333; text-decoration:none; ' href='../10-27-3/'>马上2015了，测测你的幸福指数吧！：）</a></div>
+</div>
+
+<!-- <div style="display:none;"><script type="text/javascript">tongji();</script></div> -->
+</body>
+</html>
